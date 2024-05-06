@@ -34,3 +34,33 @@ JSON
 "studentParent": "responsavel"
 }
 ```
+
+#### Editar uma matrícula de um estudante pelo CPF.
+
+`localhost:5000/api/enrollments/update | PUT`
+
+JSON
+
+```
+"studentAttribute": "document", // Especifica o item da tabela a ser modificado (name, document, shift ou class)
+"studentAttributeValue": "cpf(novo)", // Dado do novo valor no dado da tabela.
+"studentDocument": "cpf(da conta a ser modificada)", // CPF do Estudante de destino a receber as alterações.
+```
+
+#### Cancelar uma matrícula de um estudante pelo CPF
+
+`localhost:5000/api/enrollments/cancel | DELETE`
+
+JSON
+```
+"studentDocument": "(cpf)" // CPF a quem será excluida a matrícula. 
+```
+
+#### Cancelar todas as matrículas
+
+`localhost:5000/api/enrollments/admin/cancel | DELETE`
+
+JSON
+```
+"key": "chave secreta" // chave secreta para realizar uma alteração de permissão máxima no banco de dados.
+```
